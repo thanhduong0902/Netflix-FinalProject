@@ -16,7 +16,7 @@ function TvSeriesSearch() {
               poster={item.poster_path}
               title={item.title || item.name}
               date={item.first_air_date || item.release_date}
-              media_type='TV Series'
+              media_type="tv"
               vote_average={item.vote_average}
             />
           ))}

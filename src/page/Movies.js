@@ -35,17 +35,34 @@ function Movies() {
             <Row
               title="TVMovies"
               fetchUrl={requests.fetchTVMovies}
-              isLargeRow
+              type="movie"
             />
-            <Row title="War" fetchUrl={requests.fetchWarMovies} />
-            <Row title="Anime Movies" fetchUrl={requests.fetchAnime} />
+            <Row title="War" fetchUrl={requests.fetchWarMovies} type="movie" />
+            <Row
+              title="Anime Movies"
+              fetchUrl={requests.fetchAnime}
+              type="movie"
+            />
             <Row
               title="Science and Fiction Movies "
               fetchUrl={requests.fetchScienceFictionMovies}
+              type="movie"
             />
-            <Row title="Music" fetchUrl={requests.fetchMusicMovies} />
-            <Row title="Family" fetchUrl={requests.fetchFamilyMovies} />
-            <Row title="Thriller" fetchUrl={requests.fetchThrillerMovies} />
+            <Row
+              title="Music"
+              fetchUrl={requests.fetchMusicMovies}
+              type="movie"
+            />
+            <Row
+              title="Family"
+              fetchUrl={requests.fetchFamilyMovies}
+              type="movie"
+            />
+            <Row
+              title="Thriller"
+              fetchUrl={requests.fetchThrillerMovies}
+              type="movie"
+            />
           </>
         )}
       </Container>

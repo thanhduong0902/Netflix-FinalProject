@@ -32,13 +32,13 @@ function TvSeries() {
                 No TV Series found
               </h2>
             )}
-            <Row title="Talk show" fetchUrl={requests.fetchTalk} isLargeRow />
-            <Row title="News" fetchUrl={requests.fetchNews} />
-            <Row title="Drama" fetchUrl={requests.fetchDrama} />
-            <Row title="Family TV" fetchUrl={requests.fetchFamily} />
-            <Row title="Kids TV" fetchUrl={requests.fetchKids} />
-            <Row title="Anime" fetchUrl={requests.fetchAnimation} />
-            <Row title=" Comedy" fetchUrl={requests.fetchComedyTv} />
+            <Row title="Talk show" fetchUrl={requests.fetchTalk} type="tv" />
+            <Row title="News" fetchUrl={requests.fetchNews} type="tv" />
+            <Row title="Drama" fetchUrl={requests.fetchDrama} type="tv" />
+            <Row title="Family TV" fetchUrl={requests.fetchFamily} type="tv" />
+            <Row title="Kids TV" fetchUrl={requests.fetchKids} type="tv" />
+            <Row title="Anime" fetchUrl={requests.fetchAnimation} type="tv" />
+            <Row title=" Comedy" fetchUrl={requests.fetchComedyTv} type="tv" />
           </>
         )}
       </Container>
