@@ -10,6 +10,7 @@ function SingleContent({ id, poster, title, date, media_type, vote_average }) {
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
+        style={{zIndex: 0}}
       />
       <img
         className="poster"

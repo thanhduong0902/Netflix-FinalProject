@@ -9,7 +9,7 @@ import HomeSearch from "./search_list/HomeSearch";
 import { SearchContext } from "./context/SearchContext";
 
 function HomeScreen() {
-  const { content, searchText, showSearch } = useContext(SearchContext);
+  const { contentHome, searchText, showSearch } = useContext(SearchContext);
 
   return (
     <div className="homeScreen">
@@ -17,7 +17,7 @@ function HomeScreen() {
       <Banner />
 
       <Container>
-        {content.length >= 1 ? (
+        {contentHome.length >= 1 ? (
           <HomeSearch />
         ) : (
           <>
@@ -29,7 +29,7 @@ function HomeScreen() {
                   marginBottom: "20px",
                 }}
               >
-                No movies found
+                No Movies/TV Series found
               </h2>
             )}
 

@@ -5,29 +5,19 @@ import { API_KEY } from "./Requests";
 import { SearchContext } from "./context/SearchContext";
 
 function Search(props) {
-  const {
-    setContentHome,
-    page,
-    searchText,
-    setSearchText,
-    setShowSearch,
-  } = useContext(SearchContext);
+  const { page, searchText, setSearchText, setShowSearch, setContentMovies } =
+    useContext(SearchContext);
 
-  const fetchSearch = useCallback(
-    async () => {
-      try {
-          const data = await axios.get(
-            `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${searchText}&language=en-US&page=${page}&include_adult=false`
-          );
-
-          setContentHome(data.data.results);
-        
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    [page, searchText, setContentHome]
-  );
+  const fetchSearch = useCallback(async () => {
+    try {
+      const dataMovies = await axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchText}&language=en-US&page=${page}&include_adult=false`
+      );
+      setContentMovies(dataMovies.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [page, searchText, setContentMovies]);
 
   useEffect(() => {
     fetchSearch();

@@ -7,18 +7,21 @@ function BannerMovies() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchTVMovies);
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-      return request;
+      try {
+        const request = await axios.get(requests.fetchTVMovies);
+        setMovie(
+          request.data.results[
+            Math.floor(Math.random() * request.data.results.length - 1)
+          ]
+        );
+        return request;
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
   }, []);
 
-  console.log(movie);
   const trancate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };

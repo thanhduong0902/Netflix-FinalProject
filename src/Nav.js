@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
+import SearchMovies from "./SearchMovies";
+import SearchTvSeries from "./SearchTvSeries";
 
 const activeClass = (params) => {
   return params.isActive ? "active-menu" : "active-menu-items";
@@ -24,7 +27,6 @@ function Nav() {
       <div className="nav__contents">
         <div className="nav-left">
           <NavLink to="/">
-            {" "}
             <img
               className="nav__logo"
               src="https://www.freepnglogos.com/uploads/netflix-logo-drawing-png-19.png"
@@ -36,9 +38,18 @@ function Nav() {
           </NavLink>
 
           <NavLink className={activeClass} to="/TvSeries">
-            <h2>TvSeries</h2>{" "}
+            <h2>TvSeries</h2>
           </NavLink>
         </div>
+
+        {window.location.pathname === "/" ? (
+          <Search />
+        ) : window.location.pathname === "/Movies" ? (
+          <SearchMovies />
+        ) : (
+          <SearchTvSeries />
+        )}
+
         <div>
           <img
             className="nav__avatar"
