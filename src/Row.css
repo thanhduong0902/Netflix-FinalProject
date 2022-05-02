@@ -3,11 +3,24 @@
   margin-left: 20px;
 }
 
-.row__posters {
+.row--flex {
   display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.row--right {
+  margin-right: -5%;
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+.row__posters {
+  display: grid;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 20px;
+  grid-auto-flow: column;
 }
 
 .row__posters::-webkit-scrollbar {
