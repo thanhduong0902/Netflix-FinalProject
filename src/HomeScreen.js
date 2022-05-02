@@ -1,24 +1,56 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import "./HomeScreen.css";
 import Banner from "./Banner";
 import Nav from "./Nav";
 import { requests } from "./Requests";
 import Row from "./Row";
+import "./HomeScreen.css";
 import Container from "@mui/material/Container";
-import HomeSearch from "./search_list/HomeSearch";
-import { SearchContext } from "./context/SearchContext";
+
+import SingleContent from "./SingleContent/SingleContent";
+import CustomPagination from "./pagination/CustomPagination";
 
 function HomeScreen() {
-  const { contentHome, searchText, showSearch } = useContext(SearchContext);
+  const [searchText, setSearchText] = useState("");
+  const [content, setContent] = useState([]);
+  const [numOfPages, setNumOfPages] = useState();
+  const [page, setPage] = useState(1);
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <div className="homeScreen">
-      <Nav />
+      <Nav
+        searchText={searchText}
+        setSearchText={setSearchText}
+        content={content}
+        setContent={setContent}
+        setNumOfPages={setNumOfPages}
+        page={page}
+        showSearch={showSearch}
+        setShowSearch={setShowSearch}
+      />
       <Banner />
 
       <Container>
-        {contentHome.length >= 1 ? (
-          <HomeSearch />
+        {content.length >= 1 ? (
+          <>
+            <div className="search__list">
+              {content &&
+                content.map((item) => (
+                  <SingleContent
+                    key={item.id}
+                    id={item.id}
+                    poster={item.poster_path}
+                    title={item.title || item.name}
+                    date={item.first_air_date || item.release_date}
+                    media_type=''
+                    vote_average={item.vote_average}
+                  />
+                ))}
+            </div>
+
+            <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+          </>
         ) : (
           <>
             {searchText && showSearch === true && (
@@ -29,7 +61,7 @@ function HomeScreen() {
                   marginBottom: "20px",
                 }}
               >
-                No Movies/TV Series found
+                No movies found
               </h2>
             )}
 
