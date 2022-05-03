@@ -5,6 +5,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import Movies from "./page/Movies";
 import TvSeries from "./page/TvSeries";
 import Nav from "./Nav";
+
 function App() {
   return (
     <div className="app">

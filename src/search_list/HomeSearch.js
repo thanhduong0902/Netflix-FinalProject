@@ -16,7 +16,7 @@ function HomeSearch() {
               poster={item.poster_path}
               title={item.title || item.name}
               date={item.first_air_date || item.release_date}
-              media_type={item.media_type}
+              media_type="movie"
               vote_average={item.vote_average}
             />
           ))}
