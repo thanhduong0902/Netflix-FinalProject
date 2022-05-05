@@ -2,7 +2,10 @@ import { createContext, useState } from "react";
 const SearchContext = createContext();
 
 function SearchProvider({ children }) {
-  const [searchText, setSearchText] = useState("");
+  const [searchTextHome, setSearchTextHome] = useState("");
+  const [searchTextMovies, setSearchTextMovies] = useState("");
+  const [searchTextTvSeries, setSearchTextTvSeries] = useState("");
+
   const [contentHome, setContentHome] = useState([]);
   const [numOfPages, setNumOfPages] = useState();
   const [page, setPage] = useState(1);
@@ -18,8 +21,12 @@ function SearchProvider({ children }) {
           setPage,
           contentHome,
           setContentHome,
-          searchText,
-          setSearchText,
+          searchTextHome,
+          setSearchTextHome,
+          searchTextMovies,
+          setSearchTextMovies,
+          searchTextTvSeries,
+          setSearchTextTvSeries,
           numOfPages,
           setNumOfPages,
           setShowSearch,

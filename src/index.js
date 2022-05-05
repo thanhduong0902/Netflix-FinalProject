@@ -5,13 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { SearchProvider } from "./context/SearchContext";
+import { LoginProvider } from "./context/AuthContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <SearchProvider>
-        <App />
-      </SearchProvider>
+      <LoginProvider>
+        <SearchProvider>
+          <App />
+        </SearchProvider>
+      </LoginProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

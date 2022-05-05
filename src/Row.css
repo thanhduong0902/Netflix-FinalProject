@@ -1,12 +1,15 @@
 .row {
   color: white;
-  margin-left: 20px;
 }
 
 .row--flex {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.row--left {
+  padding-right: 3%;
 }
 
 .row--right {

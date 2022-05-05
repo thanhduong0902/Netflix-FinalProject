@@ -12,7 +12,7 @@ import { SearchContext } from "./context/SearchContext";
 import HomeSearch from "./search_list/HomeSearch";
 
 function HomeScreen() {
-  const { contentHome, searchText, showSearch } = useContext(SearchContext);
+  const { contentHome, searchTextHome, showSearch } = useContext(SearchContext);
 
   return (
     <div className="homeScreen">
@@ -25,7 +25,7 @@ function HomeScreen() {
           <HomeSearch />
         ) : (
           <>
-            {searchText && showSearch === true && (
+            {searchTextHome && showSearch === true && (
               <h2
                 style={{
                   color: "#fff",

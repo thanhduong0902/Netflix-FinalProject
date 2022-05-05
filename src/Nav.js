@@ -1,14 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
 import SearchMovies from "./SearchMovies";
 import SearchTvSeries from "./SearchTvSeries";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
+import { LoginContext } from "./context/AuthContext";
 
 const activeClass = (params) => {
   return params.isActive ? "active-menu" : "active-menu-items";
 };
+
 function Nav() {
+  const { setLogin } = useContext(LoginContext);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleLogout = () => {
+    setLogin(false)
+    localStorage.removeItem("user");
+  };
+
   const [show, handleShow] = useState(false);
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -52,10 +71,29 @@ function Nav() {
 
         <div>
           <img
+            // id="fade-button"
+            aria-controls={open ? "fade-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
             className="nav__avatar"
             src="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXii8XVOjEhSS5FzwpdTaOrI_up-1FEkQhlOAwRDR8spO8_wys-jxD7_apK43FqGNiiEXD2r3uF971rSIva2kVA.png?r=f80"
             alt=""
           />
+          <br />
+
+          <Menu
+            // id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Fade}
+          >
+            <MenuItem onClick={handleLogout}>Log out</MenuItem>
+          </Menu>
         </div>
       </div>
     </div>

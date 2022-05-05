@@ -5,19 +5,20 @@ import { API_KEY } from "./Requests";
 import { SearchContext } from "./context/SearchContext";
 
 function Search(props) {
-  const { page, searchText, setSearchText, setShowSearch, setContentMovies } =
+  const { page, searchTextMovies, setSearchTextMovies, setShowSearch, setContentMovies } =
     useContext(SearchContext);
 
   const fetchSearch = useCallback(async () => {
     try {
       const dataMovies = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchText}&language=en-US&page=${page}&include_adult=false`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTextMovies}&language=en-US&page=${page}&include_adult=false`
       );
       setContentMovies(dataMovies.data.results);
+       window.scroll(0, 0);
     } catch (error) {
       console.log(error);
     }
-  }, [page, searchText, setContentMovies]);
+  }, [page, searchTextMovies, setContentMovies]);
 
   useEffect(() => {
     fetchSearch();
@@ -28,7 +29,7 @@ function Search(props) {
     e.preventDefault();
     setShowSearch(true);
     fetchSearch();
-    setSearchText("");
+    // setSearchTextMovies("");
   };
 
   return (
@@ -38,7 +39,7 @@ function Search(props) {
           type="text"
           placeholder="Search..."
           className="search__input"
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => setSearchTextMovies(e.target.value)}
         />
       </div>
     </form>
