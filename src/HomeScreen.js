@@ -1,5 +1,4 @@
-import react from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./HomeScreen.css";
 import Banner from "./Banner";
 import Nav from "./Nav";
