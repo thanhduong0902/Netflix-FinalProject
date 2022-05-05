@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useCallback } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -32,23 +33,34 @@ export default function ContentModal({ id, children, media_type }) {
   const [videos, setVideo] = useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const fetchData = async () => {
-    const { data } = await axios.get(
-      `http://api.themoviedb.org/3/${media_type}/${id}?api_key=${API_KEY}&language=en-US`
-    );
-    setContent(data);
-  };
-  const fetchVideo = async () => {
-    const { data } = await axios.get(
-      ` https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=1e654d3d2ad76350db78a446b60656af&language=en-US`
-    );
 
-    setVideo(data.results.slice(0, 5));
-  };
+  const fetchData = useCallback(async () => {
+    try {
+      const { data } = await axios.get(
+        `http://api.themoviedb.org/3/${media_type}/${id}?api_key=${API_KEY}&language=en-US`
+      );
+      setContent(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id, media_type]);
+
+  const fetchVideo = useCallback(async () => {
+    try {
+      const { data } = await axios.get(
+        ` https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=1e654d3d2ad76350db78a446b60656af&language=en-US`
+      );
+
+      setVideo(data.results.slice(0, 5));
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id, media_type]);
+  
   useEffect(() => {
     fetchData();
     fetchVideo();
-  }, []);
+  }, [fetchData, fetchVideo]);
 
   return (
     <>

@@ -8,6 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { LoginContext } from "./context/AuthContext";
+import {logout} from './firebase'
 
 const activeClass = (params) => {
   return params.isActive ? "active-menu" : "active-menu-items";
@@ -23,10 +24,16 @@ function Nav() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleLogout = () => {
-    setLogin(false)
-    localStorage.removeItem("user");
-  };
+
+  async function handleLogout() {
+    try {
+      await logout();
+      setLogin(false);
+      localStorage.removeItem("user");
+    } catch (error) {
+      alert(error.message);
+    }
+  }
 
   const [show, handleShow] = useState(false);
   const transitionNavBar = () => {
