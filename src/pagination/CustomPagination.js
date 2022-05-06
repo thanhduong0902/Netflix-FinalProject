@@ -21,6 +21,7 @@ function CustomPagination({ setPage, numOfPages = 10 }) {
         display: "flex",
         justifyContent: "center",
         marginTop: 10,
+        paddingBottom: 20
       }}
     >
       <ThemeProvider theme={darkTheme}>

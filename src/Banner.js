@@ -1,7 +1,7 @@
 import axios from "./axios";
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import {requests} from "./Requests";
+import { requests } from "./Requests";
 function Banner() {
   const [movie, setMovie] = useState([]);
 
@@ -22,14 +22,16 @@ function Banner() {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };
   return (
-    <header
-      className="banner"
-      style={{
-        backgroundSize: "cover",
-        backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
-        backgroundPosition: "center center",
-      }}
-    >
+    <div className="banner">
+      <header
+        className="banner-bg"
+        style={{
+          backgroundSize: "cover",
+          backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
+          backgroundPosition: "center center",
+        }}
+      >
+      </header>
       <div className="banner__contents">
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
@@ -40,7 +42,7 @@ function Banner() {
         </h1>
       </div>
       <div className="banner__fadeBottom" />
-    </header>
+    </div>
   );
 }
 

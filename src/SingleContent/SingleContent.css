@@ -24,7 +24,7 @@
 
 .poster {
   border-radius: 10px;
-  min-height: 300px;
+  max-height: 300px;
 }
 
 .title {
