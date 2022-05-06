@@ -1,0 +1,45 @@
+.search > div {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  filter: drop-shadow(0 1px #0091c2);
+}
+
+.search > div:after {
+  content: "";
+  background: white;
+  width: 2px;
+  height: 12px;
+  position: absolute;
+  top: 26px;
+  right: 2px;
+  transform: rotate(148deg);
+}
+
+.search > div > input {
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  border: solid 2px white;
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+.search > div > input::placeholder {
+  color: #efefef;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+}
