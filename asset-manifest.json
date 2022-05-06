@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thanhduong0902/Netflix-FinalProject.git/static/css/main.0a4e8524.css",
+    "main.js": "/thanhduong0902/Netflix-FinalProject.git/static/js/main.439ee1e1.js",
+    "static/js/787.9f55f560.chunk.js": "/thanhduong0902/Netflix-FinalProject.git/static/js/787.9f55f560.chunk.js",
+    "index.html": "/thanhduong0902/Netflix-FinalProject.git/index.html",
+    "main.0a4e8524.css.map": "/thanhduong0902/Netflix-FinalProject.git/static/css/main.0a4e8524.css.map",
+    "main.439ee1e1.js.map": "/thanhduong0902/Netflix-FinalProject.git/static/js/main.439ee1e1.js.map",
+    "787.9f55f560.chunk.js.map": "/thanhduong0902/Netflix-FinalProject.git/static/js/787.9f55f560.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a4e8524.css",
+    "static/js/main.439ee1e1.js"
+  ]
+}
