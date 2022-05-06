@@ -79,3 +79,25 @@
   background-color: aliceblue;
   transition: all 0.3s;
 }
+@media (max-width: 390px) {
+  .nav__logo {
+  width: 15%;
+  }
+  .active-menu-items{
+    width: 20%;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #111;
+  }
+  .active-menu-items h2{
+    font-size: 1rem;
+    
+  }
+  .nav-left{
+    position:absolute;
+    left: 30px;
+    justify-content: center;
+    background-color: #111;
+  }
+  
+}

@@ -36,7 +36,10 @@ function Banner() {
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <br />
+
+        <div className="banner__buttons"></div>
+
+
         <h1 className="banner__description">
           {trancate(movie?.overview, 150)}
         </h1>
