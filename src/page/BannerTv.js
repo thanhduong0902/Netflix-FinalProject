@@ -38,11 +38,9 @@ function BannerTv() {
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-<<<<<<< HEAD
+
         <div className="banner__buttons"></div>
-=======
-        <br />
->>>>>>> ce0b17c79efa344f7eff5a4de29840c2bc4c40d1
+
         <h1 className="banner__description">
           {trancate(movie?.overview, 150)}
         </h1>
