@@ -1,7 +1,7 @@
 import axios from "./axios";
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import {requests} from "./Requests";
+import { requests } from "./Requests";
 function Banner() {
   const [movie, setMovie] = useState([]);
 
@@ -34,10 +34,7 @@ function Banner() {
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div className="banner__buttons">
-          <button className="banner__button">Play</button>
-          <button className="banner__button">My list</button>
-        </div>
+        <div className="banner__buttons"></div>
         <h1 className="banner__description">
           {trancate(movie?.overview, 150)}
         </h1>

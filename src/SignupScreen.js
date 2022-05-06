@@ -44,15 +44,6 @@ function SignupScreen() {
 
   return (
     <div className="signupScreen">
-      {email === "" && password === "" ? (
-        <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert variant="filled" severity="error">
-            This is an error alert — check it out!
-          </Alert>
-        </Stack>
-      ) : (
-        <></>
-      )}
       <form>
         <h1>Sign In</h1>
         <input
@@ -74,7 +65,9 @@ function SignupScreen() {
           required
         />
 
-        <button type="submit" onClick={handleLogin}>Sign In</button>
+        <button type="submit" onClick={handleLogin}>
+          Sign In
+        </button>
 
         <h4>
           <span className="signupScreen__gray">New to Netflix? </span>
