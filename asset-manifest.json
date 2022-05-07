@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/thanhduong0902/Netflix-FinalProject.git/static/css/main.0a4e8524.css",
-    "main.js": "/thanhduong0902/Netflix-FinalProject.git/static/js/main.439ee1e1.js",
-    "static/js/787.9f55f560.chunk.js": "/thanhduong0902/Netflix-FinalProject.git/static/js/787.9f55f560.chunk.js",
-    "index.html": "/thanhduong0902/Netflix-FinalProject.git/index.html",
-    "main.0a4e8524.css.map": "/thanhduong0902/Netflix-FinalProject.git/static/css/main.0a4e8524.css.map",
-    "main.439ee1e1.js.map": "/thanhduong0902/Netflix-FinalProject.git/static/js/main.439ee1e1.js.map",
-    "787.9f55f560.chunk.js.map": "/thanhduong0902/Netflix-FinalProject.git/static/js/787.9f55f560.chunk.js.map"
+    "main.css": "/Netflix-FinalProject/static/css/main.e6e2ad08.css",
+    "main.js": "/Netflix-FinalProject/static/js/main.20002913.js",
+    "static/js/787.ac914eee.chunk.js": "/Netflix-FinalProject/static/js/787.ac914eee.chunk.js",
+    "index.html": "/Netflix-FinalProject/index.html",
+    "main.e6e2ad08.css.map": "/Netflix-FinalProject/static/css/main.e6e2ad08.css.map",
+    "main.20002913.js.map": "/Netflix-FinalProject/static/js/main.20002913.js.map",
+    "787.ac914eee.chunk.js.map": "/Netflix-FinalProject/static/js/787.ac914eee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a4e8524.css",
-    "static/js/main.439ee1e1.js"
+    "static/css/main.e6e2ad08.css",
+    "static/js/main.20002913.js"
   ]
 }
