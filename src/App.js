@@ -7,9 +7,10 @@ import TvSeries from "./page/TvSeries";
 import Nav from "./Nav";
 import { LoginContext } from "./context/AuthContext";
 import LoginScreen from "./LoginScreen";
+import SignupScreen from "./SignupScreen";
 
 function App() {
-  const { login } = useContext(LoginContext);
+  const { login, check } = useContext(LoginContext);
 
   return (
     <div className="app">
@@ -22,12 +23,12 @@ function App() {
       )}
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={login === true ? <HomeScreen /> : <LoginScreen />}
         ></Route>
         <Route path="/Movies" element={<Movies />}></Route>
         <Route path="/TvSeries" element={<TvSeries />}></Route>
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/auth" element={check === false ? <LoginScreen /> : <SignupScreen/>} />
       </Routes>
     </div>
   );

@@ -4,10 +4,10 @@ import { createContext } from "react";
 const LoginContext = createContext();
 
 function LoginProvider({ children }) {
+  const [check, setCheck] = useState(false);
+
   const [login, setLogin] = useState(
-    localStorage.getItem("user")
-      ? Boolean(localStorage.getItem("user"))
-      : false
+    localStorage.getItem("user") ? Boolean(localStorage.getItem("user")) : false
   );
 
   return (
@@ -16,6 +16,8 @@ function LoginProvider({ children }) {
         value={{
           login,
           setLogin,
+          check,
+          setCheck,
         }}
       >
         {children}

@@ -8,7 +8,7 @@ function SignupScreen() {
   const passwordRef = useRef();
 
   const [loading, setLoading] = useState(false);
-  const { setLogin } = useContext(LoginContext);
+  const { setLogin, setCheck } = useContext(LoginContext);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
@@ -26,24 +26,14 @@ function SignupScreen() {
     setLoading(false);
   }
 
-  async function handleLogin(e) {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await signin(emailRef.current.value, passwordRef.current.value);
-      setLogin(true);
-      localStorage.setItem("user", email);
-    } catch (error) {
-      alert(error.message);
-    }
-    setLoading(false);
+  const clickSignin = () => {
+    setCheck(false)
   }
 
   return (
     <div className="signupScreen">
       <form>
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
         <input
           ref={emailRef}
           type="email"
@@ -63,12 +53,12 @@ function SignupScreen() {
           required
         />
 
-        <button disabled={loading} type="submit" onClick={handleLogin}>Sign In</button>
+        <button disabled={loading} type="submit" onClick={handleSignup}>Sign Up</button>
 
         <h4>
-          <span className="signupScreen__gray">New to Netflix? </span>
-          <span disabled={loading} className="signupScreen__link" onClick={handleSignup}>
-            Sign Up now.
+          <span className="signupScreen__gray">Already have an account? </span>
+          <span disabled={loading} className="signupScreen__link" onClick={clickSignin}>
+            Sign In now.
           </span>
         </h4>
       </form>
