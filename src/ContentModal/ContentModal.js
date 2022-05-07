@@ -131,7 +131,7 @@ export default function ContentModal({ id, children, media_type }) {
                 <div className="videoYtb">
                   {videos.map((item) => (
                     <iframe
-                      src={`http://www.youtube.com/embed/${item.key}`}
+                      src={`https://www.youtube.com/embed/${item.key}`}
                       title="video"
                       width="100%"
                       frameBorder="0"
