@@ -37,7 +37,7 @@ export default function ContentModal({ id, children, media_type }) {
   const fetchData = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        `http://api.themoviedb.org/3/${media_type}/${id}?api_key=${API_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${API_KEY}&language=en-US`
       );
       setContent(data);
     } catch (error) {
