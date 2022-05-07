@@ -51,15 +51,7 @@ function Row({ title, fetchUrl, type }) {
     <div className="row">
       <h2>{title}</h2>
       <div className="row--flex">
-        {scrollX !== 0 && (
-          <ArrowBackIosIcon
-            fontSize="large"
-            className="row--left"
-            onClick={() => {
-              scroll(-120);
-            }}
-          />
-        )}
+        
         <div className="row__posters" ref={row} onScroll={scrollCheck}>
           {movies.map((movie) => (
             <SingleContent
@@ -74,15 +66,7 @@ function Row({ title, fetchUrl, type }) {
             />
           ))}
         </div>
-        {!scrolEnd && (
-          <ArrowForwardIosIcon
-            fontSize="large"
-            className="row--right"
-            onClick={() => {
-              scroll(120);
-            }}
-          />
-        )}
+        
       </div>
     </div>
   );
