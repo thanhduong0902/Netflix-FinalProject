@@ -1,7 +1,7 @@
 {
-  "name": "Netflix-FinalProject",
+  "name": "web-movie",
   "version": "0.1.0",
-  "homepage": "https://thanhduong0902.github.io/Netflix-FinalProject",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
