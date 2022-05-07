@@ -1,6 +1,7 @@
 {
-  "name": "web-movie",
+  "name": "Netflix-FinalProject",
   "version": "0.1.0",
+  "homepage": "https://thanhduong0902.github.io/Netflix-FinalProject",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
